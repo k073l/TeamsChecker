@@ -2,6 +2,7 @@ import sys
 import os
 import logging
 import time
+from typing import Union, Tuple
 
 import winsound
 import win32gui
@@ -15,7 +16,7 @@ from PIL import Image
 import waiting
 
 
-def screen_window(hwnd: int) -> str or None:
+def screen_window(hwnd: int) -> Union[str, None]:
     """
     Original: https://stackoverflow.com/questions/19695214/python-screenshot-of-inactive-window-printwindow-win32gui
     Gets a screenshot of a window, saves it to assets/test{epoch}.png and if everything succeeded returns the name
@@ -60,7 +61,7 @@ def screen_window(hwnd: int) -> str or None:
         return None
 
 
-def find_image(im: np.ndarray, tpl: np.ndarray) -> tuple:
+def find_image(im: np.ndarray, tpl: np.ndarray) -> Union[Tuple[int, int], Tuple[None, None]]:
     """
     Original: https://stackoverflow.com/questions/29663764/determine-if-an-image-exists-within-a-larger-image-and-if-so-find-it-using-py
     :param im: Large image; operated upon
