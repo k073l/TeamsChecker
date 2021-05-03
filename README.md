@@ -14,6 +14,8 @@ A script built to make sure you won't miss the moment when the meeting had start
 
 ### Known issues
 
+It runs on Windows only.
+
 Window flickering is normal and expected, due to screenshotting window using pywin32 (You might observe appearing and disappearing window title bar and borders)
 
 If you have left the meeting which hasn't ended yet, expect the alarm to go off. To silence it, simply navigate to different team tab.
